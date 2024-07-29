@@ -1,0 +1,239 @@
+body {
+            overflow-x: hidden;
+            overflow-y: hidden;
+
+        }
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    @keyframes grow {
+        from {
+            transform: scale(0.5);
+            opacity: 0;
+        }
+        to {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    .growing-text {
+        font-size: 2rem;
+        animation: grow 1s ease-in-out;
+    }
+    @keyframes moveUp {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(-25vh);
+            }
+        }
+    .moveUp {
+        animation: moveUp 1.5s ease-in-out forwards
+    }
+
+    @keyframes fadeInAndColor {
+            from {
+                opacity: 0;
+                color: #000; /* Начальный цвет текста */
+            }
+            to {
+                opacity: 1;
+                color: #FFFFFF; /* Конечный цвет текста */
+            }
+        }
+
+        .fading-text {
+            font-size: 2rem;
+            animation: fadeInAndColor 1s ease-in-out;
+        }
+    @keyframes slideIn {
+            from {
+                transform: translateX(-800%); /* Начальная позиция за пределами экрана слева */
+            }
+            to {
+                transform: translateX(0); /* Конечная позиция в центре */
+            }
+        }
+
+        .sliding-button {
+            cursor: pointer;
+            animation: slideIn 1.5s ease-in-out;
+        }
+    @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+                display: none;
+            }
+        }
+    .fade-out {
+            animation: fadeOut 1s forwards;
+        }
+    @keyframes slideInButtons1 {
+            from {
+                transform: translateX(0); /* Начальная позиция за пределами экрана слева */
+            }
+            to {
+                transform: translateX(-88vw); /* Конечная позиция в центре */
+            }
+        }
+
+        .sliding-buttons1 {
+            cursor: pointer;
+            animation: slideInButtons1 1.5s ease-in-out forwards;
+        }
+    @keyframes slideInButtons2 {
+            from {
+                transform: translateX(0); /* Начальная позиция за пределами экрана слева */
+            }
+            to {
+                transform: translateX(-84vw); /* Конечная позиция в центре */
+            }
+        }
+
+        .sliding-buttons2 {
+            cursor: pointer;
+            animation: slideInButtons2 2s ease-in-out forwards;
+        }
+
+    @keyframes slideInButtons3 {
+            from {
+                transform: translateX(0); /* Начальная позиция за пределами экрана слева */
+            }
+            to {
+                transform: translateX(-80vw); /* Конечная позиция в центре */
+            }
+        }
+
+        .sliding-buttons3 {
+            cursor: pointer;
+            animation: slideInButtons3 2.5s ease-in-out forwards;
+        }
+    @keyframes slideInButtons4 {
+            from {
+                transform: translateX(0); /* Начальная позиция за пределами экрана слева */
+            }
+            to {
+                transform: translateX(-76vw); /* Конечная позиция в центре */
+            }
+        }
+
+        .sliding-buttons4 {
+            cursor: pointer;
+            animation: slideInButtons4 3s ease-in-out forwards;
+        }
+    .scroll-container {
+            display: none;
+            overflow-y: auto;
+            overflow-x: hidden;
+            background-color: #E3F0FF;
+            flex-direction: column;
+            width: 12vw;
+            height: 28vh;
+            padding: 10px;
+            border-radius: 5px;
+            position: absolute;
+            z-index: 3;
+
+        }
+    .scroll-container::-webkit-scrollbar {
+            width: 15px; /* Width of the vertical scrollbar */
+        }
+
+        .scroll-container::-webkit-scrollbar-track {
+            background: #9ECAFE; /* Background of the scrollbar track */
+            border-radius: 5px;
+        }
+
+        .scroll-container::-webkit-scrollbar-thumb {
+            background: #76A2D6; /* Color of the scrollbar thumb */
+            border-radius: 5px;
+        }
+
+        .scroll-container::-webkit-scrollbar-thumb:hover {
+            background: #578CCA; /* Color of the scrollbar thumb on hover */
+        }
+    .scroll-container button {
+            width: 100%; /* Make buttons take full width of the container */
+            padding: 10px;;
+            margin: 5px 0;
+            background-color: #7BAEE1;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1vw;
+            font-family: Calibri;
+            font-weight: bold;
+            cursor: pointer;
+            box-sizing: border-box; /* Ensure padding and border are included in the width */
+        }
+    @keyframes fadeCategories {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .fading-categories {
+            animation: fadeCategories 0.5s ease-in-out forwards;
+        }
+    @keyframes fadeoutCategories {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+                display: none;
+            }
+        }
+
+        .fade-out-categories {
+            animation: fadeoutCategories 0.2s forwards;
+        }
+    @keyframes mainRecommendation {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .main-rec {
+            animation: mainRecommendation 2.5s ease-in-out forwards;
+        }
+
+    @keyframes slideInBoxes {
+            from {
+                transform: translateX(-120%); /* Начальная позиция за пределами экрана слева */
+            }
+            to {
+                transform: translateX(0); /* Конечная позиция в центре */
+            }
+        }
+
+        .sliding-boxes {
+            animation: slideInBoxes 1s ease-in-out;
+        }
+    @keyframes slideInBoxesTags {
+            from {
+                transform: translateX(-470%); /* Начальная позиция за пределами экрана слева */
+            }
+            to {
+                transform: translateX(0); /* Конечная позиция в центре */
+            }
+        }
+
+        .sliding-boxesTag {
+            animation: slideInBoxesTags 1s ease-in-out;
+        }

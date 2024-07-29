@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TAIMODES</title>
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+    <script src="/static/js/main.js"></script>
+</head>
+<body>
+<!--<img width="100%" height="1100vh" style="position: absolute; z-index: -2; top: 116vh; left: 0px"-->
+<!--     src="/static/images/background2.jpg">-->
+<img width="100%" height=240%" style="position: absolute; z-index: -2; top: 0px; left: 0px"
+     src="/static/images/background.png">
+<div class="container" style="margin-top: 15%">
+    <h1 class="growing-text"
+        style="font-weight: bold; font-size: 7vh; font-family: Verdana; color: #D2E2FE; margin-bottom: 0px; margin-top: 0px">
+        TAIMODES</h1>
+    <h2 class="fading-text" style="color: #FFFFFF; font-size: 3.5vh; font-family: Calibri; margin-top: 0px">ИГРЫ НА
+        ЛЮБОЙ ВКУС</h2>
+    <a>
+        <button id="RemoveButton" onclick="removeButton(this)" class="sliding-button" style="padding: 10px 20px;
+            font-size: 2vh;
+            background-color: #7BAEE1;
+            color: black;
+            border: none;
+            font-weight: bold;
+            border-radius: calc(0.2vh + 0.2vw); width: 36vh">ВПЕРЁЁЁЁЁЁД!
+        </button>
+    </a>
+</div>
+<div style="display: flex; position: absolute; z-index: 2; left: 110vw; top: 20vh">
+    <button onclick="getCategories()" id="b1"
+            style="font-family: Calibri; border-radius: calc(0.5vh + 0.5vw); color: #6A97CB; border: none; font-size: 1.2vw; font-weight: bold; background-color: #E3F0FF; cursor: pointer; width: 11vw; height: 6vh;">
+        Категории
+    </button>
+    <button onclick="getGenres()" id="b2"
+            style=" font-family: Calibri; border-radius: calc(0.5vh + 0.5vw); color: #6A97CB; border: none; font-size: 1.2vw; font-weight: bold; background-color: #E3F0FF; cursor: pointer; width: 11vw; height: 6vh;">
+        Жанры
+    </button>
+    <button id="b3"
+            style=" font-family: Calibri; border-radius: calc(0.5vh + 0.5vw); color: #6A97CB; border: none; font-size: 1.2vw; font-weight: bold; background-color: #E3F0FF; cursor: pointer; width: 11vw; height: 6vh;">
+        Для слабых пк
+    </button>
+    <button id="b4"
+            style=" font-family: Calibri; border-radius: calc(0.5vh + 0.5vw); color: #6A97CB; border: none; font-size: 1vw; font-weight: bold; background-color: #E3F0FF; cursor: pointer; width: 11vw; height: 6vh;">
+        Тест комплектующих
+    </button>
+</div>
+<div id="categ" class="scroll-container" style="top: 20vh; left: 21.5vw;">
+    <button onclick="closeCategories()" style="background-color: #3B6AA1">ЗАКРЫТЬ</button>
+    <button>3D</button>
+    <button>2D</button>
+    <button>ПИКСЕЛЬНЫЕ</button>
+    <button>СЮЖЕТНЫЕ</button>
+    <button>ЗОМБИ</button>
+    <button>ПК</button>
+    <button>ТЕЛЕФОН/ПЛАНШЕТ</button>
+    <button>КЛИКЕРЫ</button>
+    <button>ВОЕННЫЕ</button>
+    <button>КОСМОС</button>
+    <button>ОНЛАЙН</button>
+</div>
+<div id="genres" class="scroll-container" style="top: 20vh; left: 36.5vw;">
+    <button onclick="closeGenres()" style="background-color: #3B6AA1">ЗАКРЫТЬ</button>
+    <button>ЭКШН</button>
+    <button>ШУТЕРЫ</button>
+    <button>ФАЙТИНГ</button>
+    <button>ПЛАТФОРМЕРЫ</button>
+    <button>МУЗЫКАЛЬНЫЕ</button>
+    <button>ТЕКСТОВЫЕ</button>
+    <button>СИМУЛЯТОР</button>
+    <button>ГОЛОВОЛОМКИ</button>
+    <button>СТРАТЕГИИ</button>
+    <button>ХОРРОРЫ</button>
+    <button>MMORPG</button>
+    <button>ACTION-ADVENTURE</button>
+</div>
+<div style="display: none; height: 60vh; width: 58vw; position: absolute; left: 21vw; top: 30vh; z-index: -1"
+     id="carouselExample"
+     class="carousel slide">
+    <div class="carousel-inner">
+        <div style="height: 60vh; width: 58vw;" class="carousel-item active">
+            <img style="border-radius: calc(0.7vh + 0.7vw)" height="100%"
+                 width="100%" src="/static/images/main_image.jpg">
+        </div>
+        <div style="height: 60vh; width: 58vw;" class="carousel-item">
+            <img style="border-radius: calc(0.7vh + 0.7vw)" height="100%"
+                 width="100%" src="/static/images/main_image2.jpg">
+        </div>
+        <div style="height: 60vh; width: 58vw;" class="carousel-item">
+            <img style="border-radius: calc(0.7vh + 0.7vw)" height="100%"
+                 width="100%" src="/static/images/main_image3.jpg">
+        </div>
+    </div>
+    <button style="border-radius: calc(0.7vh + 0.7vw) 0px 0px calc(0.7vh + 0.7vw);" class="carousel-control-prev"
+            type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button style="border-radius: 0px calc(0.7vh + 0.7vw) calc(0.7vh + 0.7vw) 0px;" class="carousel-control-next"
+            type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<div id="tagMainRec"
+     style="display: none; border-radius: calc(0.7vh + 0.7vw) 0px calc(0.7vh + 0.7vw) 0px; background-color: #E3F0FF; width: 15vw; height: 8vh; position: absolute; left: 21vw; top: 30vh; z-index: -1">
+    <p style="color: #6A97CB; font-size: calc(1.2vw + 1.2vh); margin-top: 1vh; text-align: center; font-weight: bold">
+        Свежие игры</p>
+</div>
+<div id="tagMainRec2"
+     style="display: none; pointer-events: none; border: calc(0.2vh + 0.2vw) solid #E3F0FF; border-radius: calc(0.7vh + 0.7vw); width: 58vw; height: 60vh; position: absolute; left: 21vw; top: 30vh; z-index: -1">
+</div>
+<div id="popularGames"
+     style="padding: 7px; display: flex; visibility: hidden; border-radius: 0px 0px calc(0.7vh + 0.7vw) 0px; background-color: #E3F0FF; width: 68vw; height: 36vh; position: absolute; left: 16vw; top: 130vh; z-index: -1">
+    <button style="border: calc(0.2vh + 0.2vw) solid #6A97CB; padding: 0px; border-radius: calc(0.5vh + 0.5vw) 0px calc(0.5vh + 0.5vw) 0px; width: 12vw; height: 100%">
+        <div style="border-radius: calc(0.5vh + 0.5vw) 0px calc(0.5vh + 0.5vw) 0px; width: 100%; height: 100%; justify-content: space-between">
+            <img style="border-radius: calc(0.5vh + 0.5vw) 0px 0px 0px;" width="100%" height="40%"
+                 src="/static/images/popularGame1.jpg">
+            <div style="width: 100%; display: flex; margin-left: 0.5vw; margin-top: 5%"><h1
+                    style="font-weight: bold; font-size: calc(0.75vh + 0.75vw); color: #4277B3">GTA V</h1></div>
+            <div style="margin-top: 10%">
+                <div style="width: 100%; display: flex">
+                    <p style="margin-left: 0.5vw; font-size: 2vh; font-family: Verdana; font-weight: bold; color: #6A97CB">
+                        9/10</p>
+                    <img style="border-radius: calc(0.2vh + 0.2vw); margin-left: 0.8vw" width="15%" height="15%"
+                         src="/static/images/steam.jpg">
+                </div>
+                <div style="width: 100%; display: flex;">
+                    <p style="margin-left: 0.5vw; font-size: 2vh; font-family: Verdana; font-weight: bold; color: #6A97CB">
+                        4.7/5</p>
+                    <img style="border-radius: calc(0.2vh + 0.2vw); margin-left: 0.5vw" width="15%" height="15%"
+                         src="/static/images/EpicGames.jpg">
+                </div>
+            </div>
+        </div>
+    </button>
+    <button style="margin-left: 0.2vw; border: calc(0.2vh + 0.2vw) solid #6A97CB; padding: 0px; border-radius: calc(0.5vh + 0.5vw) 0px calc(0.5vh + 0.5vw) 0px; width: 12vw; height: 100%">
+        <div style="border-radius: calc(0.5vh + 0.5vw) 0px calc(0.5vh + 0.5vw) 0px; width: 100%; height: 100%; justify-content: space-between">
+            <img style="border-radius: calc(0.5vh + 0.5vw) 0px 0px 0px;" width="100%" height="40%"
+                 src="/static/images/popularGame2.jpg">
+            <div style="width: 100%; display: flex; margin-left: 0.5vw; margin-top: 5%"><h1
+                    style="font-weight: bold; font-size: calc(0.75vh + 0.75vw); color: #4277B3">Genshin Impact</h1>
+            </div>
+            <div style="margin-top: 10%">
+                <div style="width: 100%; display: flex">
+                    <p style="margin-left: 0.5vw; font-size: 2vh; font-family: Verdana; font-weight: bold; color: #6A97CB">
+                        3.6/5</p>
+                    <img style="border-radius: calc(0.2vh + 0.2vw); margin-left: 0.8vw" width="15%" height="15%"
+                         src="/static/images/GP.jpg">
+                </div>
+                <div style="width: 100%; display: flex;">
+                    <p style="margin-left: 0.5vw; font-size: 2vh; font-family: Verdana; font-weight: bold; color: #6A97CB">
+                        4.7/5</p>
+                    <img style="border-radius: calc(0.2vh + 0.2vw); margin-left: 0.5vw" width="15%" height="15%"
+                         src="/static/images/EpicGames.jpg">
+                </div>
+            </div>
+        </div>
+    </button>
+    <button style="margin-left: 0.2vw; border: calc(0.2vh + 0.2vw) solid #6A97CB; padding: 0px; border-radius: calc(0.5vh + 0.5vw) 0px calc(0.5vh + 0.5vw) 0px; width: 12vw; height: 100%">
+        <div style="border-radius: calc(0.5vh + 0.5vw) 0px calc(0.5vh + 0.5vw) 0px; width: 100%; height: 100%; justify-content: space-between">
+            <img style="border-radius: calc(0.5vh + 0.5vw) 0px 0px 0px;" width="100%" height="40%"
+                 src="/static/images/popularGame3.jpg">
+            <div style="width: 100%; display: flex; margin-left: 0.5vw; margin-top: 5%"><h1
+                    style="font-weight: bold; font-size: calc(0.75vh + 0.75vw); color: #4277B3">Zenless Zone Zero</h1>
+            </div>
+            <div style="margin-top: 10%">
+                <div style="width: 100%; display: flex">
+                    <p style="margin-left: 0.5vw; font-size: 2vh; font-family: Verdana; font-weight: bold; color: #6A97CB">
+                        3.3/5</p>
+                    <img style="border-radius: calc(0.2vh + 0.2vw); margin-left: 0.8vw" width="15%" height="15%"
+                         src="/static/images/GP.jpg">
+                </div>
+                <div style="width: 100%; display: flex;">
+                    <p style="margin-left: 0.5vw; font-size: 2vh; font-family: Verdana; font-weight: bold; color: #6A97CB">
+                        4.5/5</p>
+                    <img style="border-radius: calc(0.2vh + 0.2vw); margin-left: 0.5vw" width="15%" height="15%"
+                         src="/static/images/EpicGames.jpg">
+                </div>
+            </div>
+        </div>
+    </button>
+    <button style="margin-left: 0.2vw; border: calc(0.2vh + 0.2vw) solid #6A97CB; padding: 0px; border-radius: calc(0.5vh + 0.5vw) 0px calc(0.5vh + 0.5vw) 0px; width: 12vw; height: 100%">
+        <div style="border-radius: calc(0.5vh + 0.5vw) 0px calc(0.5vh + 0.5vw) 0px; width: 100%; height: 100%; justify-content: space-between">
+            <img style="border-radius: calc(0.5vh + 0.5vw) 0px 0px 0px;" width="100%" height="40%"
+                 src="/static/images/popularGame4.jpg">
+            <div style="width: 100%; display: flex; margin-left: 0.5vw; margin-top: 5%"><h1
+                    style="font-weight: bold; font-size: calc(0.75vh + 0.75vw); color: #4277B3">Baldur’s Gate III</h1>
+            </div>
+            <div style="margin-top: 10%">
+                <div style="width: 100%; display: flex">
+                    <p style="margin-left: 0.5vw; font-size: 2vh; font-family: Verdana; font-weight: bold; color: #6A97CB">
+                        10/10</p>
+                    <img style="border-radius: calc(0.2vh + 0.2vw); margin-left: 0.8vw" width="15%" height="15%"
+                         src="/static/images/steam.jpg">
+                </div>
+                <div style="width: 100%; display: flex;">
+                    <p style="margin-left: 0.5vw; font-size: 2vh; font-family: Verdana; font-weight: bold; color: #6A97CB">
+                        4.1/5</p>
+                    <img style="border-radius: calc(0.2vh + 0.2vw); margin-left: 0.5vw" width="15%" height="15%"
+                         src="/static/images/gog.jpg">
+                </div>
+            </div>
+        </div>
+    </button>
+    <button style="margin-left: 0.2vw; border: calc(0.2vh + 0.2vw) solid #6A97CB; padding: 0px; border-radius: calc(0.5vh + 0.5vw) 0px calc(0.5vh + 0.5vw) 0px; width: 12vw; height: 100%">
+        <div style="border-radius: calc(0.5vh + 0.5vw) 0px calc(0.5vh + 0.5vw) 0px; width: 100%; height: 100%; justify-content: space-between">
+            <img style="border-radius: calc(0.5vh + 0.5vw) 0px 0px 0px;" width="100%" height="40%"
+                 src="/static/images/popularGame5.jpg">
+            <div style="width: 100%; display: flex; margin-left: 0.5vw; margin-top: 5%"><h1
+                    style="font-weight: bold; font-size: calc(0.75vh + 0.75vw); color: #4277B3">Rust</h1></div>
+            <div style="margin-top: 10%">
+                <div style="width: 100%; display: flex">
+                    <p style="margin-left: 0.5vw; font-size: 2vh; font-family: Verdana; font-weight: bold; color: #6A97CB">
+                        9/10</p>
+                    <img style="border-radius: calc(0.2vh + 0.2vw); margin-left: 0.8vw" width="15%" height="15%"
+                         src="/static/images/steam.jpg">
+                </div>
+            </div>
+        </div>
+    </button>
+    <button style="margin-left: 0.2vw; border: calc(0.2vh + 0.2vw) solid #6A97CB; padding: 0px; border-radius: calc(0.5vh + 0.5vw) 0px calc(0.5vh + 0.5vw) 0px; width: 12vw; height: 100%">
+        <div style="border-radius: calc(0.5vh + 0.5vw) 0px calc(0.5vh + 0.5vw) 0px; width: 100%; height: 100%; justify-content: space-between">
+            <img style="border-radius: calc(0.5vh + 0.5vw) 0px 0px 0px;" width="100%" height="40%"
+                 src="/static/images/popularGame6.jpg">
+            <div style="width: 100%; display: flex; margin-left: 0.5vw; margin-top: 5%"><h1
+                    style="font-weight: bold; font-size: calc(0.75vh + 0.75vw); color: #4277B3">War Thunder</h1></div>
+            <div style="margin-top: 10%">
+                <div style="width: 100%; display: flex">
+                    <p style="margin-left: 0.5vw; font-size: 2vh; font-family: Verdana; font-weight: bold; color: #6A97CB">
+                        7/10</p>
+                    <img style="border-radius: calc(0.2vh + 0.2vw); margin-left: 0.8vw" width="15%" height="15%"
+                         src="/static/images/steam.jpg">
+                </div>
+            </div>
+        </div>
+    </button>
+</div>
+<div id="tagPopularGames"
+     style="visibility: hidden; width: 15vw; height: 7vh; border-radius: calc(0.7vh + 0.7vw) 0px 0px 0px; background-color: #E3F0FF; left: 16vw; position: absolute; top: 123.5vh; z-index: -1">
+    <p style="color: #6A97CB; font-size: calc(1.2vw + 1.2vh); margin-top: 0.5vh; text-align: center; font-weight: bold">
+        Популярные</p>
+</div>
+<div id="expectedGames"
+     style="padding: 7px; display: flex; visibility: hidden; border-radius: 0px 0px calc(0.7vh + 0.7vw) 0px; background-color: #E3F0FF; width: 68vw; height: 36vh; position: absolute; left: 16vw; top: 180vh; z-index: -1">
+    <button style="border: calc(0.2vh + 0.2vw) solid #6A97CB; padding: 0px; border-radius: calc(0.5vh + 0.5vw) 0px calc(0.5vh + 0.5vw) 0px; width: 12vw; height: 100%">
+        <div style="border-radius: calc(0.5vh + 0.5vw) 0px calc(0.5vh + 0.5vw) 0px; width: 100%; height: 100%; justify-content: space-between">
+            <img style="border-radius: calc(0.5vh + 0.5vw) 0px 0px 0px;" width="100%" height="40%"
+                 src="/static/images/expectedGame1.jpg">
+            <div style="width: 100%; display: flex; margin-left: 0.5vw; margin-top: 5%"><h1
+                    style="font-weight: bold; font-size: calc(0.75vh + 0.75vw); color: #4277B3">GTA VI</h1></div>
+            <div style="margin-top: 10%">
+                <div style="width: 100%; display: flex">
+                    <p style="margin-left: 0.5vw; font-size: 2vh; font-family: Verdana; font-weight: bold; color: #6A97CB">
+                        Осень 2025 г.</p>
+                </div>
+            </div>
+        </div>
+    </button>
+    <button style="margin-left: 0.2vw; border: calc(0.2vh + 0.2vw) solid #6A97CB; padding: 0px; border-radius: calc(0.5vh + 0.5vw) 0px calc(0.5vh + 0.5vw) 0px; width: 12vw; height: 100%">
+        <div style="border-radius: calc(0.5vh + 0.5vw) 0px calc(0.5vh + 0.5vw) 0px; width: 100%; height: 100%; justify-content: space-between">
+            <img style="border-radius: calc(0.5vh + 0.5vw) 0px 0px 0px;" width="100%" height="40%"
+                 src="/static/images/expectedGame2.jpg">
+            <div style="width: 100%; display: flex; margin-left: 0.5vw; margin-top: 5%"><h1
+                    style="font-weight: bold; font-size: calc(0.75vh + 0.75vw); color: #4277B3">Doom: The Dark...</h1>
+            </div>
+            <div style="margin-top: 10%">
+                <div style="width: 100%; display: flex">
+                    <p style="margin-left: 0.5vw; font-size: 2vh; font-family: Verdana; font-weight: bold; color: #6A97CB">
+                        2025 г.</p>
+                </div>
+            </div>
+        </div>
+    </button>
+    <button style="margin-left: 0.2vw; border: calc(0.2vh + 0.2vw) solid #6A97CB; padding: 0px; border-radius: calc(0.5vh + 0.5vw) 0px calc(0.5vh + 0.5vw) 0px; width: 12vw; height: 100%">
+        <div style="border-radius: calc(0.5vh + 0.5vw) 0px calc(0.5vh + 0.5vw) 0px; width: 100%; height: 100%; justify-content: space-between">
+            <img style="border-radius: calc(0.5vh + 0.5vw) 0px 0px 0px;" width="100%" height="40%"
+                 src="/static/images/expectedGame3.jpg">
+            <div style="width: 100%; display: flex; margin-left: 0.5vw; margin-top: 5%"><h1
+                    style="font-weight: bold; font-size: calc(0.75vh + 0.75vw); color: #4277B3">Death Stranding 2</h1>
+            </div>
+            <div style="margin-top: 10%">
+                <div style="width: 100%; display: flex">
+                    <p style="margin-left: 0.5vw; font-size: 2vh; font-family: Verdana; font-weight: bold; color: #6A97CB">
+                        2025 г.</p>
+                </div>
+            </div>
+        </div>
+    </button>
+    <button style="margin-left: 0.2vw; border: calc(0.2vh + 0.2vw) solid #6A97CB; padding: 0px; border-radius: calc(0.5vh + 0.5vw) 0px calc(0.5vh + 0.5vw) 0px; width: 12vw; height: 100%">
+        <div style="border-radius: calc(0.5vh + 0.5vw) 0px calc(0.5vh + 0.5vw) 0px; width: 100%; height: 100%; justify-content: space-between">
+            <img style="border-radius: calc(0.5vh + 0.5vw) 0px 0px 0px;" width="100%" height="40%"
+                 src="/static/images/expectedGame4.jpg">
+            <div style="width: 100%; display: flex; margin-left: 0.5vw; margin-top: 5%"><h1
+                    style="font-weight: bold; font-size: calc(0.75vh + 0.75vw); color: #4277B3">State of Decay 3</h1>
+            </div>
+            <div style="margin-top: 10%">
+                <div style="width: 100%; display: flex">
+                    <p style="margin-left: 0.5vw; font-size: 2vh; font-family: Verdana; font-weight: bold; color: #6A97CB">
+                        ??? г.</p>
+                </div>
+            </div>
+        </div>
+    </button>
+    <button style="margin-left: 0.2vw; border: calc(0.2vh + 0.2vw) solid #6A97CB; padding: 0px; border-radius: calc(0.5vh + 0.5vw) 0px calc(0.5vh + 0.5vw) 0px; width: 12vw; height: 100%">
+        <div style="border-radius: calc(0.5vh + 0.5vw) 0px calc(0.5vh + 0.5vw) 0px; width: 100%; height: 100%; justify-content: space-between">
+            <img style="border-radius: calc(0.5vh + 0.5vw) 0px 0px 0px;" width="100%" height="40%"
+                 src="/static/images/expectedGame5.jpg">
+            <div style="width: 100%; display: flex; margin-left: 0.5vw; margin-top: 5%"><h1
+                    style="font-weight: bold; font-size: calc(0.75vh + 0.75vw); color: #4277B3">Little Nightma.. III</h1></div>
+            <div style="margin-top: 10%">
+                <div style="width: 100%; display: flex">
+                    <p style="margin-left: 0.5vw; font-size: 2vh; font-family: Verdana; font-weight: bold; color: #6A97CB">
+                        2025 г.</p>
+                </div>
+            </div>
+        </div>
+    </button>
+    <button style="margin-left: 0.2vw; border: calc(0.2vh + 0.2vw) solid #6A97CB; padding: 0px; border-radius: calc(0.5vh + 0.5vw) 0px calc(0.5vh + 0.5vw) 0px; width: 12vw; height: 100%">
+        <div style="border-radius: calc(0.5vh + 0.5vw) 0px calc(0.5vh + 0.5vw) 0px; width: 100%; height: 100%; justify-content: space-between">
+            <img style="border-radius: calc(0.5vh + 0.5vw) 0px 0px 0px;" width="100%" height="40%"
+                 src="/static/images/popularGame6.jpg">
+            <div style="width: 100%; display: flex; margin-left: 0.5vw; margin-top: 5%"><h1
+                    style="font-weight: bold; font-size: calc(0.75vh + 0.75vw); color: #4277B3">War Thunder</h1></div>
+            <div style="margin-top: 10%">
+                <div style="width: 100%; display: flex">
+                    <p style="margin-left: 0.5vw; font-size: 2vh; font-family: Verdana; font-weight: bold; color: #6A97CB">
+                        7/10</p>
+                    <img style="border-radius: calc(0.2vh + 0.2vw); margin-left: 0.8vw" width="15%" height="15%"
+                         src="/static/images/steam.jpg">
+                </div>
+            </div>
+        </div>
+    </button>
+</div>
+<div id="tagExpectedGames"
+     style="visibility: hidden; width: 15vw; height: 7vh; border-radius: calc(0.7vh + 0.7vw) 0px 0px 0px; background-color: #E3F0FF; left: 16vw; position: absolute; top: 173.5vh; z-index: -1">
+    <p style="color: #6A97CB; font-size: calc(1.2vw + 1.2vh); margin-top: 0.5vh; text-align: center; font-weight: bold">
+        Ожидаемые</p>
+</div>
+<script>
+    const box2 = document.getElementById('expectedGames');
+    const box1 = document.getElementById('popularGames');
+    const trigger1 = document.getElementById('tagMainRec');
+    const tagBox1 = document.getElementById("tagPopularGames");
+    const tagBox2 = document.getElementById("tagExpectedGames");
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                document.body.style.overflowY = "auto";
+                removeButton(document.getElementById('RemoveButton'));
+                box1.classList.add("sliding-boxes");
+                box1.style.visibility = "visible";
+                tagBox1.classList.add('sliding-boxesTag');
+                tagBox1.style.visibility = "visible";
+            }
+        });
+    }, { threshold: 0.05 });
+    const observer2 = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                box1.classList.remove("sliding-boxes");
+                box2.classList.remove("sliding-boxes");
+                box1.style.visibility = "hidden";
+                box2.style.visibility = "hidden";
+                tagBox1.classList.remove('sliding-boxesTag');
+                tagBox1.style.visibility = "hidden";
+                tagBox2.classList.remove('sliding-boxesTag');
+                tagBox2.style.visibility = "hidden";
+            }
+        });
+    }, { threshold: 1 });
+    const observer3 = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                document.body.style.overflowY = "auto";
+                box2.classList.add("sliding-boxes");
+                box2.style.visibility = "visible";
+                tagBox2.classList.add('sliding-boxesTag');
+                tagBox2.style.visibility = "visible";
+            }
+        });
+    }, { threshold: 0.05 });
+    // Начинаем наблюдать за самими элементом popularGames
+    observer.observe(box1);
+    observer2.observe(trigger1);
+    observer3.observe(box2);
+</script>
+</body>
+</html>
