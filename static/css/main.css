@@ -79,10 +79,10 @@ body {
         }
     @keyframes slideInButtons1 {
             from {
-                transform: translateX(0); /* Начальная позиция за пределами экрана слева */
+                transform: translateX(210vw); /* Начальная позиция за пределами экрана слева */
             }
             to {
-                transform: translateX(-88vw); /* Конечная позиция в центре */
+                transform: translateX(132vw); /* Конечная позиция в центре */
             }
         }
 
@@ -92,10 +92,10 @@ body {
         }
     @keyframes slideInButtons2 {
             from {
-                transform: translateX(0); /* Начальная позиция за пределами экрана слева */
+                transform: translateX(210vw); /* Начальная позиция за пределами экрана слева */
             }
             to {
-                transform: translateX(-84vw); /* Конечная позиция в центре */
+                transform: translateX(136vw); /* Конечная позиция в центре */
             }
         }
 
@@ -106,10 +106,10 @@ body {
 
     @keyframes slideInButtons3 {
             from {
-                transform: translateX(0); /* Начальная позиция за пределами экрана слева */
+                transform: translateX(210vw); /* Начальная позиция за пределами экрана слева */
             }
             to {
-                transform: translateX(-80vw); /* Конечная позиция в центре */
+                transform: translateX(140vw); /* Конечная позиция в центре */
             }
         }
 
@@ -119,10 +119,10 @@ body {
         }
     @keyframes slideInButtons4 {
             from {
-                transform: translateX(0); /* Начальная позиция за пределами экрана слева */
+                transform: translateX(210vw); /* Начальная позиция за пределами экрана слева */
             }
             to {
-                transform: translateX(-76vw); /* Конечная позиция в центре */
+                transform: translateX(144vw); /* Конечная позиция в центре */
             }
         }
 
